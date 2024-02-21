@@ -5,11 +5,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import ErrorPage from "./pages/ErrorPage.jsx"
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App msg={"Hello, from router!"}/>,
+    errorElement: <ErrorPage />,
   },
 ]);
 
