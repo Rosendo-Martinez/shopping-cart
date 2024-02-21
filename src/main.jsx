@@ -1,10 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import ErrorPage from "./pages/ErrorPage.jsx"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./pages/ErrorPage.jsx";
 import Layout from "./pages/Layout.jsx";
 
 const router = createBrowserRouter([
