@@ -17,7 +17,7 @@ function Header({ itemsInCartCount, handleCartClick }) {
         <Link className={classes.link} to={"/"}>
           Home
         </Link>
-        <Link className={classes.link} to={"/Shop"}>
+        <Link className={classes.link} to={"/shop"}>
           Shop
         </Link>
       </div>
