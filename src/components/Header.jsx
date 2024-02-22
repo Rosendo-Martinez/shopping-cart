@@ -3,8 +3,7 @@ import star from "../assets/star.png";
 import cart from "../assets/cart.png";
 import classes from "../styles/header.module.css";
 
-function Header() {
-  const COUNT_OF_ITEMS_IN_CART = 1;
+function Header({ itemsInCartCount, handleCartClick }) {
   const MAX_ITEMS = 99;
 
   return (
@@ -25,18 +24,13 @@ function Header() {
 
       <div className={classes.right}>
         <div className={classes.cartAndBadgeContainer}>
-          <button
-            onClick={() => console.log("Cart button clicked!")}
-            className={classes.cartButton}
-          >
+          <button onClick={handleCartClick} className={classes.cartButton}>
             <img className={classes.cart} src={cart} />
           </button>
-          {COUNT_OF_ITEMS_IN_CART > 0 ? (
+          {itemsInCartCount > 0 ? (
             <div className={classes.badge}>
               <p className={classes.badgeText}>
-                {COUNT_OF_ITEMS_IN_CART <= MAX_ITEMS
-                  ? COUNT_OF_ITEMS_IN_CART
-                  : "+99"}
+                {itemsInCartCount <= MAX_ITEMS ? itemsInCartCount : "+99"}
               </p>
             </div>
           ) : null}
