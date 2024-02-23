@@ -1,0 +1,64 @@
+.hero {
+  --flag-red: rgb(205 0 0);
+  --black: rgb(12 0 5);
+  --yellow: rgb(255 216 0);
+
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--flag-red);
+  background-image: url("../assets/flagSU.png");
+  background-position: 20rem 2rem;
+  background-repeat: no-repeat;
+}
+
+.CTAContainer {
+  display: flex;
+}
+
+.CTAContainer .left {
+  width: 1.25rem;
+  background-color: var(--black);
+  flex-shrink: 0;
+}
+
+.CTAContainer .right {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heroImage {
+  display: block;
+}
+
+.shopLink {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--black);
+  background-color: var(--yellow);
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  transition: transform 1s ease-out 0s;
+}
+
+.shopLink:hover {
+  background-color: var(--black);
+  color: var(--yellow);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    background-position: 15rem 2rem;
+  }
+
+  .heroImage {
+    display: none;
+  }
+
+  .CTAContainer {
+    min-height: 350px;
+  }
+}
