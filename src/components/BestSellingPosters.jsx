@@ -91,7 +91,7 @@ Poster.propTypes = {
   bestSellingRank: PropTypes.number,
   cost: PropTypes.number,
   storePage: PropTypes.string,
-  image: PropTypes.string
-}
+  image: PropTypes.string,
+};
 
 export default BestSellingPosters;
