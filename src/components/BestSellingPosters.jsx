@@ -11,7 +11,7 @@ function BestSellingPosters() {
       description:
         "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
       image: placeHolder,
-      cost: "40",
+      cost: 6001,
       sold: 6,
     },
     {
@@ -20,7 +20,7 @@ function BestSellingPosters() {
       description:
         "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
       image: placeHolder,
-      cost: "40",
+      cost: 34,
       sold: 5,
     },
     {
@@ -29,7 +29,7 @@ function BestSellingPosters() {
       description:
         "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
       image: placeHolder,
-      cost: "40",
+      cost: 999,
       sold: 10,
     },
     {
@@ -38,7 +38,7 @@ function BestSellingPosters() {
       description:
         "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
       image: placeHolder,
-      cost: "40",
+      cost: 256,
       sold: 3,
     },
   ];
