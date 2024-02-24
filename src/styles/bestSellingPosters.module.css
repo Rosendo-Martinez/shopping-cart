@@ -1,0 +1,70 @@
+/* Best Selling */
+
+.bestSellingPosters {
+  --red: rgb(222 25 35);
+  --black: rgb(12 0 5);
+  --white: rgb(255 252 254);
+  --flag-red: rgb(205 0 0);
+  --yellow: rgb(255 216 0);
+
+  background-color: var(--flag-red);
+}
+
+.bestSellingPosters > .title {
+  margin: 0;
+  text-align: center;
+  border-top: 1.25rem solid var(--black);
+  padding: 1rem;
+}
+
+/* Posters */
+
+.poster {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1000px;
+  border-bottom: 10px dotted var(--black);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.posterContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.posterDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.posterLink {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+
+  background-color: var(--black);
+  color: var(--yellow);
+}
+
+.posterLink:hover {
+  color: var(--black);
+  background-color: var(--yellow);
+}
+
+.posterImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 500px) {
+  .poster {
+    flex-direction: column-reverse;
+  }
+}
