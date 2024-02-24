@@ -1,6 +1,6 @@
 import Header from "../components/Header";
-import Home from "./Home";
 import Footer from "../components/Footer";
+import { Outlet } from "react-router-dom";
 
 /**
  * Returns the layout for home page.
@@ -11,7 +11,7 @@ function Layout() {
   return (
     <div>
       <Header />
-      <Home />
+      <Outlet />
       <Footer />
     </div>
   );
