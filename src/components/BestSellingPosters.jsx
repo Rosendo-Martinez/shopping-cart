@@ -1,6 +1,7 @@
 import placeHolder from "../assets/placeholder.png";
 import { Link } from "react-router-dom";
 import classes from "../styles/bestSellingPosters.module.css";
+import PropTypes from "prop-types";
 
 function BestSellingPosters() {
   const posters = [
@@ -83,6 +84,14 @@ function Poster({ title, bestSellingRank, cost, storePage, image }) {
       </div>
     </div>
   );
+}
+
+Poster.propTypes = {
+  title: PropTypes.string,
+  bestSellingRank: PropTypes.number,
+  cost: PropTypes.number,
+  storePage: PropTypes.string,
+  image: PropTypes.string
 }
 
 export default BestSellingPosters;
