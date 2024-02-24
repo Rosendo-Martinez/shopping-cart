@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import star from "../assets/star.png";
 import cart from "../assets/cart.png";
 import classes from "../styles/header.module.css";
+import PropTypes from "prop-types";
 
 function Header({ itemsInCartCount, handleCartClick }) {
   const MAX_ITEMS = 99;
@@ -39,5 +40,10 @@ function Header({ itemsInCartCount, handleCartClick }) {
     </div>
   );
 }
+
+Header.propTypes = {
+  itemsInCartCount: PropTypes.number,
+  handleCartClick: PropTypes.func,
+};
 
 export default Header;
