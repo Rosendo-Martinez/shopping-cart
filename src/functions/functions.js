@@ -3,7 +3,7 @@ import placeHolder from "../assets/placeholder.png";
 /**
  * Returns data of shop items of given page.
  */
-export function getShopPageData(pageNumber, itemsPerPage, sortBy) {
+export function getShopData() {
   const cardsData = [
     {
       id: 1,

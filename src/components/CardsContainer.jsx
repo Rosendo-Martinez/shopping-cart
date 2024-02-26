@@ -1,8 +1,8 @@
 import Card from "./Card";
-import { getShopPageData } from "../functions/functions";
+import { getShopData } from "../functions/functions";
 
 function CardsContainer() {
-  const cardsData = getShopPageData();
+  const cardsData = getShopData();
 
   return (
     <div>
