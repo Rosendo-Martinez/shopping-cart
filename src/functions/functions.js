@@ -45,3 +45,19 @@ export function getShopPageData(pageNumber, itemsPerPage, sortBy) {
 
   return cardsData;
 }
+
+/**
+ * List of values of allowed sort by options.
+ *
+ * @returns {Object}
+ */
+export function getSortByValues() {
+  const sortByValues = [
+    "Price: low to high",
+    "Price: high to low",
+    "Alphabetically: A-Z",
+    "Alphabetically: Z-A",
+  ];
+
+  return sortByValues;
+}
