@@ -1,5 +1,14 @@
+import SortBy from "./SortBy";
+import CardsContainer from "./CardsContainer";
+
 function ShopCatalog() {
-  return <h2>Shop Catalog!</h2>;
+
+  return (
+    <div>
+      <SortBy />
+      <CardsContainer />
+    </div>
+  );
 }
 
 export default ShopCatalog;
