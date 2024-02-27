@@ -1,12 +1,9 @@
-import CardsContainer from "../components/CardsContainer";
-import SortBy from "../components/SortBy";
+import { Outlet } from "react-router-dom";
 
 function Shop() {
   return (
     <div>
-      <h2>Shop</h2>
-      <SortBy />
-      <CardsContainer />
+      <Outlet />
     </div>
   );
 }
