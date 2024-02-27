@@ -12,7 +12,7 @@ function CardsContainer() {
           image={cd.image}
           title={cd.title}
           cost={cd.cost}
-          storePage={`shop/${cd.id}`}
+          storePage={`item/${cd.id}`}
         />
       ))}
     </div>
