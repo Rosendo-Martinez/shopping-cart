@@ -1,14 +1,13 @@
-function SortBy({ sortByValues, indexOfActiveValue, onChange }) {
+function SortBy({ sortByValues, onChange, activeValue }) {
   return (
     <div>
       <label htmlFor="sortBy">Sort By:</label>
 
       <select
         onChange={(event) => {
-          console.log(event.target.value);
           onChange(event.target.value);
         }}
-        value={sortByValues[indexOfActiveValue]}
+        value={activeValue}
         id="sortBy"
       >
         {sortByValues.map((val, i) => (

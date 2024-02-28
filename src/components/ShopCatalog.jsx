@@ -14,7 +14,11 @@ function ShopCatalog() {
     <div>
       <SortBy
         sortByValues={getSortByValues()}
-        indexOfActiveValue={0}
+        activeValue={
+          searchParams.get("sortby")
+            ? searchParams.get("sortby")
+            : "Price: low to high"
+        }
         onChange={(newValue) =>
           setSearchParams((prev) => {
             prev.set("sortby", newValue);
@@ -24,7 +28,7 @@ function ShopCatalog() {
       />
       <CardsContainer shopItems={shopItems} />
       <PageSelector
-        shopPageURLS={getShopPageURLS(5, "?col=12")}
+        shopPageURLS={getShopPageURLS(5, `?${searchParams.toString()}`)}
         activePageURLIndex={
           pageNumber === undefined ? 0 : Number(pageNumber) - 1
         }
