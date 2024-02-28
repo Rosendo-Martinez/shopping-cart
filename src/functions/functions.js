@@ -61,3 +61,12 @@ export function getSortByValues() {
 
   return sortByValues;
 }
+
+export function getShopPageURLS() {
+  return [
+    "/shop/page/1?q=1",
+    "/shop/page/2?q=1",
+    "/shop/page/3?q=1",
+    "/shop/page/4?q=1",
+  ];
+}
