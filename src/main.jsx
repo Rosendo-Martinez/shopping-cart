@@ -5,7 +5,7 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import Layout from "./pages/Layout.jsx";
 import Shop from "./pages/Shop.jsx";
 import Home from "./pages/Home.jsx";
-import ShopCatalog from "./components/ShopCatalog.jsx";
+import ShopCatalog, { loadShopItems } from "./components/ShopCatalog.jsx";
 import ShopItemPage from "./components/ShopItemPage.jsx";
 
 const router = createBrowserRouter([
@@ -19,8 +19,12 @@ const router = createBrowserRouter([
         path: "shop",
         element: <Shop />,
         children: [
-          { index: true, element: <ShopCatalog /> },
-          { path: "page/:pageNumber", element: <ShopCatalog /> },
+          { index: true, element: <ShopCatalog />, loader: loadShopItems },
+          {
+            path: "page/:pageNumber",
+            element: <ShopCatalog />,
+            loader: loadShopItems,
+          },
           { path: "item/:itemID", element: <ShopItemPage /> },
         ],
       },

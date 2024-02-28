@@ -1,12 +1,8 @@
 import Card from "./Card";
-import { getShopData } from "../functions/functions";
-
-function CardsContainer() {
-  const cardsData = getShopData();
-
+function CardsContainer({ shopItems }) {
   return (
     <div>
-      {cardsData.map((cd) => (
+      {shopItems.map((cd) => (
         <Card
           key={cd.id}
           image={cd.image}
