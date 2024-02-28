@@ -1,8 +1,9 @@
 import SortBy from "./SortBy";
 import CardsContainer from "./CardsContainer";
-import { getShopData, getSortByValues } from "../functions/functions";
+import { getShopData } from "../functions/functions";
 import { useLoaderData, useParams, useSearchParams } from "react-router-dom";
 import PageSelector from "./PageSelector";
+import { SORT_BY_VALUES, DEFAULT_SORT_BY_VALUE } from "../constants";
 
 function ShopCatalog() {
   const shopItems = useLoaderData();
@@ -13,11 +14,11 @@ function ShopCatalog() {
   return (
     <div>
       <SortBy
-        sortByValues={getSortByValues()}
+        sortByValues={SORT_BY_VALUES}
         activeValue={
           searchParams.get("sortby")
             ? searchParams.get("sortby")
-            : "Price: low to high"
+            : SORT_BY_VALUES[DEFAULT_SORT_BY_VALUE]
         }
         onChange={(newValue) =>
           setSearchParams((prev) => {
