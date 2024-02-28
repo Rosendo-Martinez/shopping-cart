@@ -1,17 +1,14 @@
-import { useState } from "react";
-import { getSortByValues } from "../functions/functions";
-
-function SortBy() {
-  const sortByValues = getSortByValues();
-
-  const [sortBy, setSortBy] = useState(sortByValues[0]);
+function SortBy({ sortByValues, indexOfActiveValue, onChange }) {
   return (
     <div>
       <label htmlFor="sortBy">Sort By:</label>
 
       <select
-        onChange={(event) => setSortBy(event.target.value)}
-        value={sortBy}
+        onChange={(event) => {
+          console.log(event.target.value);
+          onChange(event.target.value);
+        }}
+        value={sortByValues[indexOfActiveValue]}
         id="sortBy"
       >
         {sortByValues.map((val, i) => (

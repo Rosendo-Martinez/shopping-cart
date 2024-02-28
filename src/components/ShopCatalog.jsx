@@ -1,16 +1,27 @@
 import SortBy from "./SortBy";
 import CardsContainer from "./CardsContainer";
-import { getShopData } from "../functions/functions";
-import { useLoaderData, useParams } from "react-router-dom";
+import { getShopData, getSortByValues } from "../functions/functions";
+import { useLoaderData, useParams, useSearchParams } from "react-router-dom";
 import PageSelector from "./PageSelector";
 
 function ShopCatalog() {
   const shopItems = useLoaderData();
   const { pageNumber } = useParams();
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <div>
-      <SortBy />
+      <SortBy
+        sortByValues={getSortByValues()}
+        indexOfActiveValue={0}
+        onChange={(newValue) =>
+          setSearchParams((prev) => {
+            prev.set("sortby", newValue);
+            return prev;
+          })
+        }
+      />
       <CardsContainer shopItems={shopItems} />
       <PageSelector
         shopPageURLS={getShopPageURLS(5, "?col=12")}
