@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function SortBy({ sortByValues, onChange, activeValue }) {
   return (
     <div>
@@ -19,5 +21,11 @@ function SortBy({ sortByValues, onChange, activeValue }) {
     </div>
   );
 }
+
+SortBy.propTypes = {
+  sortByValues: PropTypes.arrayOf(PropTypes.string),
+  onChange: PropTypes.func,
+  activeValue: PropTypes.string,
+};
 
 export default SortBy;
