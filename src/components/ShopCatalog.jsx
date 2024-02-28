@@ -3,7 +3,11 @@ import CardsContainer from "./CardsContainer";
 import { getShopData } from "../functions/functions";
 import { useLoaderData, useParams, useSearchParams } from "react-router-dom";
 import PageSelector from "./PageSelector";
-import { SORT_BY_VALUES, DEFAULT_SORT_BY_VALUE } from "../constants";
+import {
+  SORT_BY_VALUES,
+  DEFAULT_SORT_BY_VALUE,
+  SORT_BY_PARAM_KEY,
+} from "../constants";
 
 function ShopCatalog() {
   const shopItems = useLoaderData();
@@ -16,13 +20,13 @@ function ShopCatalog() {
       <SortBy
         sortByValues={SORT_BY_VALUES}
         activeValue={
-          searchParams.get("sortby")
-            ? searchParams.get("sortby")
+          searchParams.get(SORT_BY_PARAM_KEY)
+            ? searchParams.get(SORT_BY_PARAM_KEY)
             : SORT_BY_VALUES[DEFAULT_SORT_BY_VALUE]
         }
-        onChange={(newValue) =>
+        onChange={(newSortByValue) =>
           setSearchParams((prev) => {
-            prev.set("sortby", newValue);
+            prev.set(SORT_BY_PARAM_KEY, newSortByValue);
             return prev;
           })
         }

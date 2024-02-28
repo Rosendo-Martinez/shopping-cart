@@ -6,3 +6,5 @@ export const SORT_BY_VALUES = [
 ];
 
 export const DEFAULT_SORT_BY_VALUE = 0;
+
+export const SORT_BY_PARAM_KEY = "sortby";
