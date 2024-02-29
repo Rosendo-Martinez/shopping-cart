@@ -1,7 +1,7 @@
 import { SHOP_ITEMS_DEV_ONLY } from "../constants";
 
 /**
- * Fetches the shop item data.
+ * Fetches the item data for the given page with given sort by option.
  *
  * @param {number} page the page number of the catalog
  * @param {string} sortBy
