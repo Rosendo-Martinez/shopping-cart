@@ -1,5 +1,5 @@
 import SortBy from "./SortBy";
-import CardsContainer from "./CardsContainer";
+import CatalogItemsContainer from "./CatalogItemsContainer";
 import { useLoaderData, useParams, useSearchParams } from "react-router-dom";
 import PageSelector from "./PageSelector";
 import {
@@ -35,7 +35,7 @@ function ShopCatalog() {
           })
         }
       />
-      <CardsContainer shopItems={shop.items} />
+      <CatalogItemsContainer shopItems={shop.items} />
       <PageSelector
         shopPageURLS={createPageShopURLS(shop.numberOfPages, SEARCH_QUERY)}
         activePageURLIndex={

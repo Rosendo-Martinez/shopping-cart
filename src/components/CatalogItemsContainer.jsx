@@ -2,7 +2,7 @@ import Card from "./Card";
 import { ITEM_LINK_PREFIX } from "../constants";
 import PropTypes from "prop-types";
 
-function CardsContainer({ shopItems }) {
+function CatalogItemsContainer({ shopItems }) {
   return (
     <div>
       {shopItems.map((cd) => (
@@ -18,7 +18,7 @@ function CardsContainer({ shopItems }) {
   );
 }
 
-CardsContainer.propTypes = {
+CatalogItemsContainer.propTypes = {
   shopItems: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.string,
@@ -29,4 +29,4 @@ CardsContainer.propTypes = {
   ),
 };
 
-export default CardsContainer;
+export default CatalogItemsContainer;
