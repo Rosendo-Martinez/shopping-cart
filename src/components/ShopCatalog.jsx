@@ -15,6 +15,11 @@ function ShopCatalog() {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
+  // temporary
+  const NUMBER_OF_PAGES = 5;
+  const SEARCH_QUERY =
+    searchParams.toString().length !== 0 ? `?${searchParams.toString()}` : "";
+
   return (
     <div>
       <SortBy
@@ -33,7 +38,7 @@ function ShopCatalog() {
       />
       <CardsContainer shopItems={shopItems} />
       <PageSelector
-        shopPageURLS={getShopPageURLS(5, `?${searchParams.toString()}`)}
+        shopPageURLS={createPageShopURLS(NUMBER_OF_PAGES, SEARCH_QUERY)}
         activePageURLIndex={
           pageNumber === undefined ? 0 : Number(pageNumber) - 1
         }
@@ -50,13 +55,14 @@ export async function loadShopItems() {
  * Creates and returns the links to the shop pages with the given queries.
  *
  * @param {number} numberOfPages
- * @param {string} queries example: ?color=red&width=12
+ * @param {string} searchQueries example: ?color=red&width=12
  * @returns
  */
-function getShopPageURLS(numberOfPages, queries = "") {
+function createPageShopURLS(numberOfPages, searchQueries) {
+  const SHOP_URL_POSTFIX = "/shop/page";
   return Array(numberOfPages)
     .fill(null)
-    .map((v, i) => `/shop/page/${1 + i}${queries}`);
+    .map((v, i) => `${SHOP_URL_POSTFIX}/${i + 1}${searchQueries}`);
 }
 
 export default ShopCatalog;
