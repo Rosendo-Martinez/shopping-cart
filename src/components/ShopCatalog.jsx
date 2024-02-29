@@ -1,6 +1,5 @@
 import SortBy from "./SortBy";
 import CardsContainer from "./CardsContainer";
-import { getShopData } from "../functions/functions";
 import { useLoaderData, useParams, useSearchParams } from "react-router-dom";
 import PageSelector from "./PageSelector";
 import {
@@ -8,6 +7,7 @@ import {
   DEFAULT_SORT_BY_VALUE,
   SORT_BY_PARAM_KEY,
   SHOP_PAGE_LINK_PREFIX,
+  SHOP_ITEMS_DEV_ONLY,
 } from "../constants";
 
 function ShopCatalog() {
@@ -49,7 +49,7 @@ function ShopCatalog() {
 }
 
 export async function loadShopItems() {
-  return getShopData();
+  return SHOP_ITEMS_DEV_ONLY;
 }
 
 /**

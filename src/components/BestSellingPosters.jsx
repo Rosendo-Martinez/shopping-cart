@@ -1,64 +1,22 @@
-import placeHolder from "../assets/placeholder.png";
 import { Link } from "react-router-dom";
 import classes from "../styles/bestSellingPosters.module.css";
 import PropTypes from "prop-types";
-import { ITEM_LINK_PREFIX } from "../constants";
+import { ITEM_LINK_PREFIX, SHOP_ITEMS_DEV_ONLY } from "../constants";
 
 function BestSellingPosters() {
-  const posters = [
-    {
-      id: 1,
-      title: "TITLE",
-      description:
-        "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
-      image: placeHolder,
-      cost: 6001,
-      sold: 6,
-    },
-    {
-      id: 2,
-      title: "TITLE",
-      description:
-        "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
-      image: placeHolder,
-      cost: 34,
-      sold: 5,
-    },
-    {
-      id: 3,
-      title: "TITLE",
-      description:
-        "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
-      image: placeHolder,
-      cost: 999,
-      sold: 10,
-    },
-    {
-      id: 4,
-      title: "TITLE",
-      description:
-        "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
-      image: placeHolder,
-      cost: 256,
-      sold: 3,
-    },
-  ];
-
   return (
     <div className={classes.bestSellingPosters}>
       <h2 className={classes.title}>Best Selling Posters</h2>
-      {posters
-        .sort((a, b) => a.sold - b.sold)
-        .map((p, i) => (
-          <Poster
-            key={p.id}
-            title={p.title}
-            bestSellingRank={i + 1}
-            cost={p.cost}
-            itemStorePage={`${ITEM_LINK_PREFIX}/${p.id}`}
-            image={p.image}
-          />
-        ))}
+      {SHOP_ITEMS_DEV_ONLY.sort((a, b) => a.sold - b.sold).map((p, i) => (
+        <Poster
+          key={p.id}
+          title={p.title}
+          bestSellingRank={i + 1}
+          cost={p.cost}
+          itemStorePage={`${ITEM_LINK_PREFIX}/${p.id}`}
+          image={p.image}
+        />
+      ))}
     </div>
   );
 }

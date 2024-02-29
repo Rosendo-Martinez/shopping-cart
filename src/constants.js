@@ -1,3 +1,5 @@
+import placeHolderImage from "./assets/placeholder.png";
+
 export const SORT_BY_VALUES = [
   "Price: low to high",
   "Price: high to low",
@@ -11,3 +13,43 @@ export const HOME_LINK = "/";
 export const SHOP_LINK = "/shop";
 export const ITEM_LINK_PREFIX = "/shop/item";
 export const SHOP_PAGE_LINK_PREFIX = "/shop/page";
+
+// Temporary development only constant
+export const SHOP_ITEMS_DEV_ONLY = [
+  {
+    id: 1,
+    title: "TITLE",
+    description:
+      "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
+    image: placeHolderImage,
+    cost: 6001,
+    sold: 6,
+  },
+  {
+    id: 2,
+    title: "TITLE",
+    description:
+      "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
+    image: placeHolderImage,
+    cost: 34,
+    sold: 5,
+  },
+  {
+    id: 3,
+    title: "TITLE",
+    description:
+      "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
+    image: placeHolderImage,
+    cost: 999,
+    sold: 10,
+  },
+  {
+    id: 4,
+    title: "TITLE",
+    description:
+      "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
+    image: placeHolderImage,
+    cost: 256,
+    sold: 3,
+  },
+];
