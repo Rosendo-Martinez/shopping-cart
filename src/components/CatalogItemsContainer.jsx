@@ -1,4 +1,4 @@
-import Card from "./Card";
+import CatalogItem from "./CatalogItem";
 import { ITEM_LINK_PREFIX } from "../constants";
 import PropTypes from "prop-types";
 
@@ -6,7 +6,7 @@ function CatalogItemsContainer({ shopItems }) {
   return (
     <div>
       {shopItems.map((cd) => (
-        <Card
+        <CatalogItem
           key={cd.id}
           image={cd.image}
           title={cd.title}
