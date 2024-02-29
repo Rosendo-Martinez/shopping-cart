@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function PageSelector({ shopPageURLS, activePageURLIndex }) {
   return (
@@ -18,3 +19,8 @@ export default function PageSelector({ shopPageURLS, activePageURLIndex }) {
     </div>
   );
 }
+
+PageSelector.propTypes = {
+  shopPageURLS: PropTypes.arrayOf(PropTypes.string),
+  activePageURLIndex: PropTypes.number,
+};
