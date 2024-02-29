@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Card({ image, title, cost, storePage }) {
+function Card({ image, title, cost, itemStorePage }) {
   return (
     <div>
-      <Link to={storePage}>
+      <Link to={itemStorePage}>
         <div>
           <img src={image} />
         </div>
@@ -21,7 +21,7 @@ Card.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   cost: PropTypes.number,
-  storePage: PropTypes.string,
+  itemStorePage: PropTypes.string,
 };
 
 export default Card;

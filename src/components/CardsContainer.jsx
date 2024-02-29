@@ -10,7 +10,7 @@ function CardsContainer({ shopItems }) {
           image={cd.image}
           title={cd.title}
           cost={cd.cost}
-          storePage={`${ITEM_LINK_PREFIX}/${cd.id}`}
+          itemStorePage={`${ITEM_LINK_PREFIX}/${cd.id}`}
         />
       ))}
     </div>
