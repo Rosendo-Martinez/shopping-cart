@@ -7,8 +7,8 @@ import {
   DEFAULT_SORT_BY_VALUE,
   SORT_BY_PARAM_KEY,
   SHOP_PAGE_LINK_PREFIX,
-  SHOP_ITEMS_DEV_ONLY,
 } from "../constants";
+import { fetchShopData } from "../function/function";
 
 function ShopCatalog() {
   const shopItems = useLoaderData();
@@ -48,8 +48,14 @@ function ShopCatalog() {
   );
 }
 
-export async function loadShopItems() {
-  return SHOP_ITEMS_DEV_ONLY;
+export async function loadShopItems({ params, request }) {
+  const url = new URL(request.url);
+  const sortBy = url.searchParams.get(SORT_BY_PARAM_KEY);
+
+  // params.pageNumber may be undefined
+  // sortby may be null
+  // Should deal with this eventually
+  return fetchShopData(params.pageNumber, sortBy);
 }
 
 /**
