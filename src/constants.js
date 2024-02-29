@@ -53,3 +53,4 @@ export const SHOP_ITEMS_DEV_ONLY = [
     sold: 3,
   },
 ];
+export const NUMBER_OF_PAGES_IN_CATALOG_DEV_ONLY = 7;

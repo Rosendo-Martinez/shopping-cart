@@ -11,13 +11,11 @@ import {
 import { fetchShopData } from "../function/function";
 
 function ShopCatalog() {
-  const shopItems = useLoaderData();
+  const shop = useLoaderData();
   const { pageNumber } = useParams();
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // temporary
-  const NUMBER_OF_PAGES = 5;
   const SEARCH_QUERY =
     searchParams.toString().length !== 0 ? `?${searchParams.toString()}` : "";
 
@@ -37,9 +35,9 @@ function ShopCatalog() {
           })
         }
       />
-      <CardsContainer shopItems={shopItems} />
+      <CardsContainer shopItems={shop.items} />
       <PageSelector
-        shopPageURLS={createPageShopURLS(NUMBER_OF_PAGES, SEARCH_QUERY)}
+        shopPageURLS={createPageShopURLS(shop.numberOfPages, SEARCH_QUERY)}
         activePageURLIndex={
           pageNumber === undefined ? 0 : Number(pageNumber) - 1
         }
@@ -52,8 +50,8 @@ export async function loadShopItems({ params, request }) {
   const url = new URL(request.url);
   const sortBy = url.searchParams.get(SORT_BY_PARAM_KEY);
 
-  // params.pageNumber may be undefined
-  // sortby may be null
+  // params.pageNumber may be undefined (due to /shop being same as /shop/page/1)
+  // sortby may be null (due to /shop being same as /shop?sortBy=<DEFAULT>)
   // Should deal with this eventually
   return fetchShopData(params.pageNumber, sortBy);
 }
