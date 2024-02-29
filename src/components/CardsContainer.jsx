@@ -1,5 +1,6 @@
 import Card from "./Card";
 import { ITEM_LINK_PREFIX } from "../constants";
+import PropTypes from "prop-types";
 
 function CardsContainer({ shopItems }) {
   return (
@@ -16,5 +17,16 @@ function CardsContainer({ shopItems }) {
     </div>
   );
 }
+
+CardsContainer.propTypes = {
+  shopItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string,
+      title: PropTypes.string,
+      cost: PropTypes.number,
+      itemStorePage: PropTypes.string,
+    }),
+  ),
+};
 
 export default CardsContainer;
