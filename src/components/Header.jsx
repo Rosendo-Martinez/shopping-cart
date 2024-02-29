@@ -3,6 +3,7 @@ import star from "../assets/star.png";
 import cart from "../assets/cart.png";
 import classes from "../styles/header.module.css";
 import PropTypes from "prop-types";
+import { SHOP_LINK, HOME_LINK } from "../constants";
 
 function Header({ itemsInCartCount, handleCartClick }) {
   const MAX_ITEMS = 99;
@@ -15,10 +16,10 @@ function Header({ itemsInCartCount, handleCartClick }) {
       </div>
 
       <div className={classes.center}>
-        <Link className={classes.link} to={"/"}>
+        <Link className={classes.link} to={HOME_LINK}>
           Home
         </Link>
-        <Link className={classes.link} to={"/shop"}>
+        <Link className={classes.link} to={SHOP_LINK}>
           Shop
         </Link>
       </div>

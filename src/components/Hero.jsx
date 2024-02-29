@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import aleksandrSolzhenitsyn from "../assets/aleksandrSolzhenitsyn.jpg";
 import classes from "../styles/hero.module.css";
+import { SHOP_LINK } from "../constants";
 
 function Hero() {
   return (
@@ -14,7 +15,7 @@ function Hero() {
             "The Gulag Archipelago"
           </h1>
           <div>
-            <Link className={classes.shopLink} to={"/shop"}>
+            <Link className={classes.shopLink} to={SHOP_LINK}>
               Shop
             </Link>
           </div>

@@ -2,6 +2,7 @@ import placeHolder from "../assets/placeholder.png";
 import { Link } from "react-router-dom";
 import classes from "../styles/bestSellingPosters.module.css";
 import PropTypes from "prop-types";
+import { ITEM_LINK_PREFIX } from "../constants";
 
 function BestSellingPosters() {
   const posters = [
@@ -54,7 +55,7 @@ function BestSellingPosters() {
             title={p.title}
             bestSellingRank={i + 1}
             cost={p.cost}
-            storePage={`store/${p.id}`}
+            storePage={`${ITEM_LINK_PREFIX}/${p.id}`}
             image={p.image}
           />
         ))}

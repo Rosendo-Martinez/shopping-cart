@@ -1,4 +1,6 @@
 import Card from "./Card";
+import { ITEM_LINK_PREFIX } from "../constants";
+
 function CardsContainer({ shopItems }) {
   return (
     <div>
@@ -8,7 +10,7 @@ function CardsContainer({ shopItems }) {
           image={cd.image}
           title={cd.title}
           cost={cd.cost}
-          storePage={`item/${cd.id}`}
+          storePage={`${ITEM_LINK_PREFIX}/${cd.id}`}
         />
       ))}
     </div>

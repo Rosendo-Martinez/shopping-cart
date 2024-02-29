@@ -7,6 +7,7 @@ import {
   SORT_BY_VALUES,
   DEFAULT_SORT_BY_VALUE,
   SORT_BY_PARAM_KEY,
+  SHOP_PAGE_LINK_PREFIX,
 } from "../constants";
 
 function ShopCatalog() {
@@ -59,10 +60,9 @@ export async function loadShopItems() {
  * @returns
  */
 function createPageShopURLS(numberOfPages, searchQueries) {
-  const SHOP_URL_POSTFIX = "/shop/page";
   return Array(numberOfPages)
     .fill(null)
-    .map((v, i) => `${SHOP_URL_POSTFIX}/${i + 1}${searchQueries}`);
+    .map((v, i) => `${SHOP_PAGE_LINK_PREFIX}/${i + 1}${searchQueries}`);
 }
 
 export default ShopCatalog;
