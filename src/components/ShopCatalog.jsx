@@ -9,6 +9,7 @@ import {
   SHOP_PAGE_LINK_PREFIX,
 } from "../constants";
 import { fetchShopData } from "../function/function";
+import classes from "../styles/shopCatalog.module.css";
 
 function ShopCatalog() {
   const shop = useLoaderData();
@@ -20,7 +21,7 @@ function ShopCatalog() {
     searchParams.toString().length !== 0 ? `?${searchParams.toString()}` : "";
 
   return (
-    <div>
+    <div className={classes.shopCatalog}>
       <SortBy
         sortByValues={SORT_BY_VALUES}
         activeValue={
