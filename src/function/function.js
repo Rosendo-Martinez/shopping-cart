@@ -17,3 +17,14 @@ export async function fetchShopData(page, sortBy) {
     items: SHOP_ITEMS_DEV_ONLY,
   };
 }
+
+/**
+ * Fetches data of the shop item with the given ID.
+ *
+ * @param {string} id id of shop item
+ * @returns {Object} item data
+ */
+export async function fetchItemData(id) {
+  // TODO: error checking for invalid id
+  return SHOP_ITEMS_DEV_ONLY[0];
+}
