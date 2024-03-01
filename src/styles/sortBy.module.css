@@ -1,0 +1,23 @@
+.container {
+  --red: rgb(222 25 35);
+  --black: rgb(12 0 5);
+  --white: rgb(255 252 254);
+  --flag-red: rgb(205 0 0);
+  --yellow: rgb(255 216 0);
+
+  padding-left: 2rem;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.select {
+  background-color: var(--yellow);
+  color: var(--black);
+  /* font-weight: bold; */
+  /* border-color: red; */
+}
