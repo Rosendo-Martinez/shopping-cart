@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import classes from "../styles/catalogItem.module.css";
 
 function CatalogItem({ image, title, cost, itemStorePage }) {
   return (
-    <div>
-      <Link to={itemStorePage}>
-        <div>
-          <img src={image} />
+    <div className={classes.container}>
+      <Link className={classes.link} to={itemStorePage}>
+        <div className={classes.imageContainer}>
+          <img className={classes.image} src={image} />
         </div>
         <div>
-          <p>{title}</p>
-          <p>{cost}</p>
+          <p className={classes.title}>{title}</p>
+          <p className={classes.cost}>{cost}</p>
         </div>
       </Link>
     </div>
