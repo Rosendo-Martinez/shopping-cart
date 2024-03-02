@@ -2,13 +2,14 @@ import { Navigate, useLoaderData } from "react-router-dom";
 import { addToCart, fetchItemData } from "../function/function";
 import { useState } from "react";
 import classes from "../styles/shopItemPage.module.css";
+import { CART_LINK } from "../constants";
 
 function ShopItemPage() {
   const item = useLoaderData();
   const { isInCart, isLoading, now } = useAddToCart(item.id);
 
   if (isLoading === false && isInCart) {
-    return <Navigate to={"/shop/checkout"} />;
+    return <Navigate to={CART_LINK} />;
   }
 
   return (

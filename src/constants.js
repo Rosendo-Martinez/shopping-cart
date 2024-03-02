@@ -11,8 +11,10 @@ export const SORT_BY_PARAM_KEY = "sortby";
 
 export const HOME_LINK = "/";
 export const SHOP_LINK = "/shop";
+export const CART_LINK = "/shop/cart";
 export const ITEM_LINK_PREFIX = "/shop/item";
 export const SHOP_PAGE_LINK_PREFIX = "/shop/page";
+
 
 // Temporary development only constant
 export const SHOP_ITEMS_DEV_ONLY = [
