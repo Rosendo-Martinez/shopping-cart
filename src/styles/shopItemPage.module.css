@@ -1,0 +1,100 @@
+@import "./globalVariables.css";
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: var(--red);
+  color: var(--white);
+  border-top: 4px solid var(--black);
+}
+
+.flex {
+  max-width: 900px;
+  width: 90%;
+  display: flex;
+}
+
+.flex > .left {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex > .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image {
+  margin-right: 1rem;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  min-width: 275px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.addToCart {
+  background-color: var(--yellow);
+  color: var(--black);
+  font-weight: bold;
+  border: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+}
+
+.addToCart:hover {
+  cursor: pointer;
+  background-color: var(--black);
+  color: var(--yellow);
+}
+
+.title {
+  margin-bottom: 5px;
+}
+
+.cost {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  border-bottom: 4px solid var(--black);
+  font-style: italic;
+}
+
+.description {
+  margin-bottom: 5rem;
+  max-width: 400px;
+}
+
+@media (max-width: 750px) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .image {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0;
+  }
+
+  .image {
+    min-width: unset;
+  }
+
+  .flex {
+    width: 100%;
+  }
+
+  .right {
+    margin: 1rem;
+  }
+}

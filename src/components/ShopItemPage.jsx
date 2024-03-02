@@ -1,6 +1,7 @@
 import { Navigate, useLoaderData } from "react-router-dom";
 import { addToCart, fetchItemData } from "../function/function";
 import { useState } from "react";
+import classes from "../styles/shopItemPage.module.css";
 
 function ShopItemPage() {
   const item = useLoaderData();
@@ -11,20 +12,24 @@ function ShopItemPage() {
   }
 
   return (
-    <div>
-      <div>
-        <img src={item.image} />
-      </div>
-
-      <div>
-        <div>
-          <h2>{item.title}</h2>
-          <p>${item.cost}</p>
+    <div className={classes.container}>
+      <div className={classes.flex}>
+        <div className={classes.left}>
+          <img className={classes.image} src={item.image} />
         </div>
-        <div>
-          <p>{item.description}</p>
-          <button onClick={now}>Add To Cart</button>
-          {isLoading ? <p>Item being added to cart...</p> : null}
+
+        <div className={classes.right}>
+          <div>
+            <h2 className={classes.title}>{item.title}</h2>
+            <p className={classes.cost}>${item.cost}</p>
+            <p className={classes.description}>{item.description}</p>
+          </div>
+          <div>
+            <button className={classes.addToCart} onClick={now}>
+              Add To Cart
+            </button>
+            {isLoading ? <p>Item being added to cart...</p> : null}
+          </div>
         </div>
       </div>
     </div>
