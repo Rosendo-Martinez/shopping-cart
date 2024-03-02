@@ -7,6 +7,7 @@ import Shop from "./pages/Shop.jsx";
 import Home from "./pages/Home.jsx";
 import ShopCatalog, { loadShopItems } from "./components/ShopCatalog.jsx";
 import ShopItemPage, { loadShopItem } from "./components/ShopItemPage.jsx";
+import Cart, { loadCart } from "./components/Cart.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
             path: "item/:itemID",
             element: <ShopItemPage />,
             loader: loadShopItem,
+          },
+          {
+            path: "cart",
+            element: <Cart />,
+            loader: loadCart,
           },
         ],
       },

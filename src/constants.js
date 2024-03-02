@@ -15,7 +15,6 @@ export const CART_LINK = "/shop/cart";
 export const ITEM_LINK_PREFIX = "/shop/item";
 export const SHOP_PAGE_LINK_PREFIX = "/shop/page";
 
-
 // Temporary development only constant
 export const SHOP_ITEMS_DEV_ONLY = [
   {
@@ -53,6 +52,28 @@ export const SHOP_ITEMS_DEV_ONLY = [
     image: placeHolderImage,
     cost: 256,
     sold: 3,
+  },
+];
+export const CART_DEV_ONLY = [
+  {
+    item: {
+      id: "1",
+      title: "TITLE",
+      image: placeHolderImage,
+      price: 120,
+      stock: 7,
+    },
+    quantity: 6,
+  },
+  {
+    item: {
+      id: "2",
+      title: "TITLE",
+      image: placeHolderImage,
+      price: 180,
+      stock: 3,
+    },
+    quantity: 2,
   },
 ];
 export const NUMBER_OF_PAGES_IN_CATALOG_DEV_ONLY = 7;

@@ -1,6 +1,7 @@
 import {
   SHOP_ITEMS_DEV_ONLY,
   NUMBER_OF_PAGES_IN_CATALOG_DEV_ONLY,
+  CART_DEV_ONLY,
 } from "../constants";
 
 /**
@@ -41,4 +42,14 @@ export async function addToCart(id) {
   );
 
   return result;
+}
+
+/**
+ * Fetches the user's cart.
+ *
+ * @param {{email: string, password: string}} credentials
+ * @return {{item:{id:string, image:string, title:string, price:Number, stock:Number }, quantity: Number}[]}
+ */
+export async function fetchCart(credentials) {
+  return CART_DEV_ONLY;
 }
