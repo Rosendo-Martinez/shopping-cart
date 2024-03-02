@@ -28,3 +28,17 @@ export async function fetchItemData(id) {
   // TODO: error checking for invalid id
   return SHOP_ITEMS_DEV_ONLY[0];
 }
+
+/**
+ * Adds the item with the given ID to the users cart.
+ *
+ * @param {string} id
+ * @returns {boolean} true if added to cart, else false
+ */
+export async function addToCart(id) {
+  const result = await new Promise((resolve) =>
+    setTimeout(() => resolve(true), 3000),
+  );
+
+  return result;
+}
