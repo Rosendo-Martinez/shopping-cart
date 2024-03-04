@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { fetchCart } from "../function/function";
+import { SHOP_LINK } from "../constants";
+import { Link } from "react-router-dom";
 
 // use a html table for layout
 function Cart() {
@@ -34,7 +36,18 @@ function Cart() {
           </table>
         </div>
 
-        <div></div>
+        <div>
+          <h3>
+            Total: $
+            {cartData.reduce(
+              (acc, current) => acc + current.item.price * current.quantity,
+              0,
+            )}
+          </h3>
+          <p>Taxes and shipping calculated at checkout.</p>
+          <button>Checkout</button>
+          <Link to={SHOP_LINK}>Continue Shopping</Link>
+        </div>
       </form>
     </div>
   );
