@@ -2,7 +2,7 @@ import { SHOP_LINK } from "../constants";
 import { Link } from "react-router-dom";
 import NumberInput from "./NumberInput";
 
-function Cart({ cart, updateItemQuantity }) {
+function Cart({ cart, updateItemQuantity, removeItemFromCart }) {
   return (
     <div>
       <h2>Shopping Cart</h2>
@@ -21,6 +21,7 @@ function Cart({ cart, updateItemQuantity }) {
               {Object.entries(cart).map(([id, item]) => {
                 return (
                   <CartItem
+                    id={id}
                     image={item.image}
                     title={item.title}
                     price={item.price}
@@ -28,6 +29,7 @@ function Cart({ cart, updateItemQuantity }) {
                     onQuantityChange={(newQuantity) =>
                       updateItemQuantity(id, newQuantity)
                     }
+                    removeItemFromCart={removeItemFromCart}
                   />
                 );
               })}
@@ -46,7 +48,15 @@ function Cart({ cart, updateItemQuantity }) {
   );
 }
 
-function CartItem({ image, title, price, quantity, onQuantityChange }) {
+function CartItem({
+  id,
+  image,
+  title,
+  price,
+  quantity,
+  onQuantityChange,
+  removeItemFromCart,
+}) {
   return (
     <tr>
       <td>
@@ -64,7 +74,9 @@ function CartItem({ image, title, price, quantity, onQuantityChange }) {
         <p>{quantity * price}</p>
       </td>
       <td>
-        <button>Remove</button>
+        <button type="button" onClick={() => removeItemFromCart(id)}>
+          Remove
+        </button>
       </td>
     </tr>
   );

@@ -24,6 +24,10 @@ function App() {
     dispatch({ type: "ADD", item: item });
   }
 
+  function removeItemFromCart(id) {
+    dispatch({ type: "REMOVE", id: id });
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -51,7 +55,11 @@ function App() {
             {
               path: "cart",
               element: (
-                <Cart cart={cart} updateItemQuantity={updateItemQuantity} />
+                <Cart
+                  cart={cart}
+                  updateItemQuantity={updateItemQuantity}
+                  removeItemFromCart={removeItemFromCart}
+                />
               ),
             },
           ],
