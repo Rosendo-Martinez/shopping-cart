@@ -76,4 +76,33 @@ export const CART_DEV_ONLY = [
     quantity: 2,
   },
 ];
+
+// temporary will delete other later
+export const CART_DEV_ONLY_2 = {
+  1: {
+    id: "1",
+    title: "TITLE",
+    image: placeHolderImage,
+    price: 120,
+    stock: 12,
+    quantity: 2,
+  },
+  2: {
+    id: "2",
+    title: "TITLE",
+    image: placeHolderImage,
+    price: 150,
+    stock: 3,
+    quantity: 1,
+  },
+  3: {
+    id: "3",
+    title: "TITLE",
+    image: placeHolderImage,
+    price: 25,
+    stock: 14,
+    quantity: 3,
+  },
+};
+
 export const NUMBER_OF_PAGES_IN_CATALOG_DEV_ONLY = 7;
