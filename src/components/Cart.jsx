@@ -69,22 +69,30 @@ function CartItem({
         </div>
       </td>
       <td className={classes.price}>
-        <p>${price}</p>
+        <div>
+          <p>${price}</p>
+        </div>
       </td>
       <td className={classes.quantity}>
-        <NumberInput
-          number={quantity}
-          onChange={onQuantityChange}
-          max={stock}
-        />
+        <div>
+          <NumberInput
+            number={quantity}
+            onChange={onQuantityChange}
+            max={stock}
+          />
+        </div>
       </td>
       <td className={classes.total}>
-        <p>{quantity * price}</p>
+        <div>
+          <p>{quantity * price}</p>
+        </div>
       </td>
       <td className={classes.removeItem}>
-        <button type="button" onClick={() => removeItemFromCart(id)}>
-          Remove
-        </button>
+        <div>
+          <button type="button" onClick={() => removeItemFromCart(id)}>
+            Remove
+          </button>
+        </div>
       </td>
     </tr>
   );
