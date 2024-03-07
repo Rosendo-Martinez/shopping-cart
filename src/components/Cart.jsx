@@ -74,7 +74,6 @@ function CartItem({
           onChange={onQuantityChange}
           max={stock}
         />
-        {stock < quantity ? <p>Only {stock} in stock.</p> : null}
       </td>
       <td>
         <p>{quantity * price}</p>
