@@ -20,7 +20,7 @@ function App() {
     dispatch({ type: "UPDATE", quantity: quantity, id: id });
   }
 
-  function addItem(item) {
+  function addItemToCart(item) {
     dispatch({ type: "ADD", item: item });
   }
 
@@ -43,7 +43,7 @@ function App() {
             },
             {
               path: "item/:itemID",
-              element: <ShopItemPage />,
+              element: <ShopItemPage addItemToCart={addItemToCart} />,
               loader: loadShopItem,
             },
             {
@@ -64,7 +64,7 @@ function App() {
 function reducer(state, action) {
   switch (action.type) {
     case "ADD":
-      return { ...state, [action.id]: { ...[action.item], quantity: 1 } };
+      return { ...state, [action.item.id]: { ...action.item, quantity: 1 } };
     case "UPDATE":
       return {
         ...state,
