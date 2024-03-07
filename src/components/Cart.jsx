@@ -1,17 +1,8 @@
-import { useLoaderData } from "react-router-dom";
-import { fetchCart } from "../function/function";
 import { SHOP_LINK } from "../constants";
 import { Link } from "react-router-dom";
 import NumberInput from "./NumberInput";
-import { useState } from "react";
 
-function Cart() {
-  const cartData = useLoaderData();
-
-  const [formQuantities, setFormQuantities] = useState(
-    initialFormQuantitiesState(cartData),
-  );
-
+function Cart({ cart }) {
   return (
     <div>
       <h2>Shopping Cart</h2>
@@ -27,19 +18,14 @@ function Cart() {
                 <th>Total</th>
                 <th>?</th>
               </tr>
-              {cartData.map(({ item }) => {
+              {Object.entries(cart).map(([id, item]) => {
                 return (
                   <CartItem
                     image={item.image}
                     title={item.title}
                     price={item.price}
-                    quantity={formQuantities[item.id]}
-                    onQuantityChange={(newQuantity) =>
-                      setFormQuantities({
-                        ...formQuantities,
-                        [item.id]: newQuantity,
-                      })
-                    }
+                    quantity={item.quantity}
+                    onQuantityChange={(nq) => console.log(nq)}
                   />
                 );
               })}
@@ -48,7 +34,7 @@ function Cart() {
         </div>
 
         <div>
-          <h3>Total: ${calculateTotal(formQuantities, cartData)}</h3>
+          <h3>Total: $1 million</h3>
           <p>Taxes and shipping calculated at checkout.</p>
           <button>Checkout</button>
           <Link to={SHOP_LINK}>Continue Shopping</Link>
@@ -80,24 +66,6 @@ function CartItem({ image, title, price, quantity, onQuantityChange }) {
       </td>
     </tr>
   );
-}
-
-function initialFormQuantitiesState(cartData) {
-  const toReturn = {};
-  cartData.forEach(({ item, quantity }) => {
-    toReturn[item.id] = quantity;
-  });
-  return toReturn;
-}
-
-function calculateTotal(formQuantities, cartData) {
-  return cartData.reduce((prev, { item }) => {
-    return prev + item.price * formQuantities[item.id];
-  }, 0);
-}
-
-export async function loadCart() {
-  return fetchCart({ email: "fake@gmail.com", password: "123abc" });
 }
 
 export default Cart;

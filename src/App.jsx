@@ -5,12 +5,12 @@ import Shop from "./pages/Shop.jsx";
 import Home from "./pages/Home.jsx";
 import ShopCatalog, { loadShopItems } from "./components/ShopCatalog.jsx";
 import ShopItemPage, { loadShopItem } from "./components/ShopItemPage.jsx";
-import Cart, { loadCart } from "./components/Cart.jsx";
+import Cart from "./components/Cart.jsx";
 import { useEffect, useReducer } from "react";
 import { fetchCart2 } from "./function/function.js";
 
 function App() {
-  const [cart, dispatch] = useReducer(reducer, null);
+  const [cart, dispatch] = useReducer(reducer, {});
 
   useEffect(() => {
     fetchCart2().then((cart) => dispatch({ type: "SET", cart: cart }));
@@ -40,8 +40,7 @@ function App() {
             },
             {
               path: "cart",
-              element: <Cart />,
-              loader: loadCart,
+              element: <Cart cart={cart} />,
             },
           ],
         },
