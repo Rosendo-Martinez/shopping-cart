@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { fetchItemData } from "../function/function";
 import classes from "../styles/shopItemPage.module.css";
+import { CART_LINK } from "../constants";
 
-function ShopItemPage({ addItemToCart }) {
+function ShopItemPage({ addItemToCart, cart }) {
   const item = useLoaderData();
 
   return (
@@ -19,12 +20,21 @@ function ShopItemPage({ addItemToCart }) {
             <p className={classes.description}>{item.description}</p>
           </div>
           <div>
-            <button
-              className={classes.addToCart}
-              onClick={() => addItemToCart(item)}
-            >
-              Add To Cart
-            </button>
+            {item.id in cart ? (
+              <div>
+                <p>Item in cart.</p>
+                <Link className={classes.goToCart} to={CART_LINK}>
+                  View Cart
+                </Link>
+              </div>
+            ) : (
+              <button
+                className={classes.addToCart}
+                onClick={() => addItemToCart(item)}
+              >
+                Add To Cart
+              </button>
+            )}
           </div>
         </div>
       </div>

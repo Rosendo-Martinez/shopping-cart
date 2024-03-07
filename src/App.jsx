@@ -43,7 +43,9 @@ function App() {
             },
             {
               path: "item/:itemID",
-              element: <ShopItemPage addItemToCart={addItemToCart} />,
+              element: (
+                <ShopItemPage addItemToCart={addItemToCart} cart={cart} />
+              ),
               loader: loadShopItem,
             },
             {
