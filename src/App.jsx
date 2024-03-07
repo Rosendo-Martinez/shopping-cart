@@ -64,6 +64,9 @@ function App() {
 function reducer(state, action) {
   switch (action.type) {
     case "ADD":
+      if (action.item.id in state) {
+        return state;
+      }
       return { ...state, [action.item.id]: { ...action.item, quantity: 1 } };
     case "UPDATE":
       return {
