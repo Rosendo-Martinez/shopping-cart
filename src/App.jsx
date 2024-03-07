@@ -7,13 +7,13 @@ import ShopCatalog, { loadShopItems } from "./components/ShopCatalog.jsx";
 import ShopItemPage, { loadShopItem } from "./components/ShopItemPage.jsx";
 import Cart from "./components/Cart.jsx";
 import { useEffect, useReducer } from "react";
-import { fetchCart2 } from "./function/function.js";
+import { fetchCart } from "./function/function.js";
 
 function App() {
   const [cart, dispatch] = useReducer(reducer, {});
 
   useEffect(() => {
-    fetchCart2().then((cart) => dispatch({ type: "SET", cart: cart }));
+    fetchCart().then((cart) => dispatch({ type: "SET", cart: cart }));
   }, []);
 
   const router = createBrowserRouter([

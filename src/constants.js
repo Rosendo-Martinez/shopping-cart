@@ -54,31 +54,7 @@ export const SHOP_ITEMS_DEV_ONLY = [
     sold: 3,
   },
 ];
-export const CART_DEV_ONLY = [
-  {
-    item: {
-      id: "1",
-      title: "TITLE",
-      image: placeHolderImage,
-      price: 120,
-      stock: 7,
-    },
-    quantity: 6,
-  },
-  {
-    item: {
-      id: "2",
-      title: "TITLE",
-      image: placeHolderImage,
-      price: 180,
-      stock: 3,
-    },
-    quantity: 2,
-  },
-];
-
-// temporary will delete other later
-export const CART_DEV_ONLY_2 = {
+export const CART_DEV_ONLY = {
   1: {
     id: "1",
     title: "TITLE",
