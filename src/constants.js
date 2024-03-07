@@ -25,6 +25,7 @@ export const SHOP_ITEMS_DEV_ONLY = [
     image: placeHolderImage,
     price: 6001,
     sold: 6,
+    stock: 12,
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ export const SHOP_ITEMS_DEV_ONLY = [
     image: placeHolderImage,
     price: 34,
     sold: 5,
+    stock: 12,
   },
   {
     id: 3,
@@ -43,6 +45,7 @@ export const SHOP_ITEMS_DEV_ONLY = [
     image: placeHolderImage,
     price: 999,
     sold: 10,
+    stock: 12,
   },
   {
     id: 4,
@@ -52,6 +55,7 @@ export const SHOP_ITEMS_DEV_ONLY = [
     image: placeHolderImage,
     price: 256,
     sold: 3,
+    stock: 12,
   },
 ];
 export const CART_DEV_ONLY = {

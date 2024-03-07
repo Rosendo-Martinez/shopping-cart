@@ -26,6 +26,7 @@ function Cart({ cart, updateItemQuantity, removeItemFromCart }) {
                     title={item.title}
                     price={item.price}
                     quantity={item.quantity}
+                    stock={item.stock}
                     onQuantityChange={(newQuantity) =>
                       updateItemQuantity(id, newQuantity)
                     }
@@ -54,6 +55,7 @@ function CartItem({
   title,
   price,
   quantity,
+  stock,
   onQuantityChange,
   removeItemFromCart,
 }) {
@@ -67,8 +69,12 @@ function CartItem({
         <p>${price}</p>
       </td>
       <td>
-        <NumberInput number={quantity} onChange={onQuantityChange} />
-        <p>Only 3 in stock!</p>
+        <NumberInput
+          number={quantity}
+          onChange={onQuantityChange}
+          max={stock}
+        />
+        {stock < quantity ? <p>Only {stock} in stock.</p> : null}
       </td>
       <td>
         <p>{quantity * price}</p>
