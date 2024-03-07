@@ -5,7 +5,7 @@ import classes from "../styles/header.module.css";
 import PropTypes from "prop-types";
 import { SHOP_LINK, HOME_LINK } from "../constants";
 
-function Header({ itemsInCartCount, handleCartClick }) {
+function Header({ totalItemsInCart, handleCartClick }) {
   const MAX_ITEMS = 99;
 
   return (
@@ -29,10 +29,10 @@ function Header({ itemsInCartCount, handleCartClick }) {
           <button onClick={handleCartClick} className={classes.cartButton}>
             <img className={classes.cart} src={cart} />
           </button>
-          {itemsInCartCount > 0 ? (
+          {totalItemsInCart > 0 ? (
             <div className={classes.badge}>
               <p className={classes.badgeText}>
-                {itemsInCartCount <= MAX_ITEMS ? itemsInCartCount : "+99"}
+                {totalItemsInCart <= MAX_ITEMS ? totalItemsInCart : "+99"}
               </p>
             </div>
           ) : null}
@@ -43,7 +43,7 @@ function Header({ itemsInCartCount, handleCartClick }) {
 }
 
 Header.propTypes = {
-  itemsInCartCount: PropTypes.number,
+  totalItemsInCart: PropTypes.number,
   handleCartClick: PropTypes.func,
 };
 

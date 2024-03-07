@@ -28,10 +28,17 @@ function App() {
     dispatch({ type: "REMOVE", id: id });
   }
 
+  function getTotalItemsInCart() {
+    return Object.entries(cart).reduce(
+      (total, [id, item]) => total + item.quantity,
+      0,
+    );
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: <Layout totalItemsInCart={getTotalItemsInCart()} />,
       errorElement: <ErrorPage />,
       children: [
         { index: true, element: <Home /> },

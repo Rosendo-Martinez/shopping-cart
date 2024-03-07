@@ -7,10 +7,10 @@ import { Outlet } from "react-router-dom";
  *
  * @return Layout for page
  */
-function Layout() {
+function Layout({ totalItemsInCart }) {
   return (
     <div>
-      <Header />
+      <Header totalItemsInCart={totalItemsInCart} />
       <Outlet />
       <Footer />
     </div>
