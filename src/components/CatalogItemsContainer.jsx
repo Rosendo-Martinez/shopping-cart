@@ -12,7 +12,7 @@ function CatalogItemsContainer({ shopItems }) {
             key={cd.id}
             image={cd.image}
             title={cd.title}
-            cost={cd.cost}
+            price={cd.price}
             itemStorePage={`${ITEM_LINK_PREFIX}/${cd.id}`}
           />
         ))}
@@ -26,7 +26,7 @@ CatalogItemsContainer.propTypes = {
     PropTypes.shape({
       image: PropTypes.string,
       title: PropTypes.string,
-      cost: PropTypes.number,
+      price: PropTypes.number,
       itemStorePage: PropTypes.string,
     }),
   ),

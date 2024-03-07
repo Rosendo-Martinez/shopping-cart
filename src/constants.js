@@ -23,7 +23,7 @@ export const SHOP_ITEMS_DEV_ONLY = [
     description:
       "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
     image: placeHolderImage,
-    cost: 6001,
+    price: 6001,
     sold: 6,
   },
   {
@@ -32,7 +32,7 @@ export const SHOP_ITEMS_DEV_ONLY = [
     description:
       "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
     image: placeHolderImage,
-    cost: 34,
+    price: 34,
     sold: 5,
   },
   {
@@ -41,7 +41,7 @@ export const SHOP_ITEMS_DEV_ONLY = [
     description:
       "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
     image: placeHolderImage,
-    cost: 999,
+    price: 999,
     sold: 10,
   },
   {
@@ -50,7 +50,7 @@ export const SHOP_ITEMS_DEV_ONLY = [
     description:
       "DESCRIPTION: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum pellentesque sem, sit amet sodales diam varius a.",
     image: placeHolderImage,
-    cost: 256,
+    price: 256,
     sold: 3,
   },
 ];

@@ -20,6 +20,10 @@ function App() {
     dispatch({ type: "UPDATE", quantity: quantity, id: id });
   }
 
+  function addItem(item) {
+    dispatch({ type: "ADD", item: item });
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",

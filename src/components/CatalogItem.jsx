@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import classes from "../styles/catalogItem.module.css";
 
-function CatalogItem({ image, title, cost, itemStorePage }) {
+function CatalogItem({ image, title, price, itemStorePage }) {
   return (
     <div className={classes.container}>
       <Link className={classes.link} to={itemStorePage}>
@@ -11,7 +11,7 @@ function CatalogItem({ image, title, cost, itemStorePage }) {
         </div>
         <div>
           <p className={classes.title}>{title}</p>
-          <p className={classes.cost}>{cost}</p>
+          <p className={classes.cost}>{price}</p>
         </div>
       </Link>
     </div>
@@ -21,7 +21,7 @@ function CatalogItem({ image, title, cost, itemStorePage }) {
 CatalogItem.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
-  cost: PropTypes.number,
+  price: PropTypes.number,
   itemStorePage: PropTypes.string,
 };
 

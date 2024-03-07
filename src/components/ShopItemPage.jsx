@@ -22,7 +22,7 @@ function ShopItemPage() {
         <div className={classes.right}>
           <div>
             <h2 className={classes.title}>{item.title}</h2>
-            <p className={classes.cost}>${item.cost}</p>
+            <p className={classes.cost}>${item.price}</p>
             <p className={classes.description}>{item.description}</p>
           </div>
           <div>
