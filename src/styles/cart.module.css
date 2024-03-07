@@ -1,0 +1,62 @@
+@import "./globalVariables.css";
+
+/* Cart */
+
+.tableContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  width: 90%;
+  max-width: 1000px;
+}
+
+/* Cart Item */
+
+.itemData {
+  display: flex;
+}
+
+.itemData > img {
+  width: 30%;
+  aspect-ratio: 1/1;
+}
+
+@media (max-width: 800px) {
+  .tableBody {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tableHead {
+    visibility: hidden;
+  }
+
+  .tableRow {
+    display: grid;
+    grid-template-areas:
+      "imageAndTitle quantity total"
+      "price . removeItem";
+  }
+
+  .imageAndTitle {
+    grid-area: imageAndTitle;
+  }
+
+  .price {
+    grid-area: price;
+  }
+
+  .quantity {
+    grid-area: quantity;
+  }
+
+  .total {
+    grid-area: total;
+  }
+
+  .removeItem {
+    grid-area: removeItem;
+  }
+}

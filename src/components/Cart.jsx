@@ -1,6 +1,7 @@
 import { SHOP_LINK } from "../constants";
 import { Link } from "react-router-dom";
 import NumberInput from "./NumberInput";
+import classes from "../styles/cart.module.css";
 
 function Cart({ cart, updateItemQuantity, removeItemFromCart }) {
   return (
@@ -8,10 +9,10 @@ function Cart({ cart, updateItemQuantity, removeItemFromCart }) {
       <h2>Shopping Cart</h2>
 
       <form>
-        <div>
-          <table>
-            <tbody>
-              <tr>
+        <div className={classes.tableContainer}>
+          <table className={classes.table}>
+            <tbody className={classes.tableBody}>
+              <tr className={classes.tableHead}>
                 <th>Item</th>
                 <th>Price</th>
                 <th>Quantity</th>
@@ -60,25 +61,27 @@ function CartItem({
   removeItemFromCart,
 }) {
   return (
-    <tr>
-      <td>
-        <img src={image} />
-        <p>{title}</p>
+    <tr className={classes.tableRow}>
+      <td className={classes.imageAndTitle}>
+        <div className={classes.itemData}>
+          <img src={image} />
+          <p>{title}</p>
+        </div>
       </td>
-      <td>
+      <td className={classes.price}>
         <p>${price}</p>
       </td>
-      <td>
+      <td className={classes.quantity}>
         <NumberInput
           number={quantity}
           onChange={onQuantityChange}
           max={stock}
         />
       </td>
-      <td>
+      <td className={classes.total}>
         <p>{quantity * price}</p>
       </td>
-      <td>
+      <td className={classes.removeItem}>
         <button type="button" onClick={() => removeItemFromCart(id)}>
           Remove
         </button>
