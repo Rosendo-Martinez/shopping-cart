@@ -16,6 +16,10 @@ function App() {
     fetchCart().then((cart) => dispatch({ type: "SET", cart: cart }));
   }, []);
 
+  function updateItemQuantity(id, quantity) {
+    dispatch({ type: "UPDATE", quantity: quantity, id: id });
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -40,7 +44,9 @@ function App() {
             },
             {
               path: "cart",
-              element: <Cart cart={cart} />,
+              element: (
+                <Cart cart={cart} updateItemQuantity={updateItemQuantity} />
+              ),
             },
           ],
         },
@@ -58,7 +64,7 @@ function reducer(state, action) {
     case "UPDATE":
       return {
         ...state,
-        [action.id]: { ...[state.id], quantity: action.quantity },
+        [action.id]: { ...state[action.id], quantity: action.quantity },
       };
     case "REMOVE":
       const copy = { ...state };

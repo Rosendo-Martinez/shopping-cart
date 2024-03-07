@@ -2,7 +2,7 @@ import { SHOP_LINK } from "../constants";
 import { Link } from "react-router-dom";
 import NumberInput from "./NumberInput";
 
-function Cart({ cart }) {
+function Cart({ cart, updateItemQuantity }) {
   return (
     <div>
       <h2>Shopping Cart</h2>
@@ -25,7 +25,9 @@ function Cart({ cart }) {
                     title={item.title}
                     price={item.price}
                     quantity={item.quantity}
-                    onQuantityChange={(nq) => console.log(nq)}
+                    onQuantityChange={(newQuantity) =>
+                      updateItemQuantity(id, newQuantity)
+                    }
                   />
                 );
               })}
