@@ -2,29 +2,103 @@
 
 /* Cart */
 
+.cartTitle {
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.cart {
+  background-color: var(--flag-red);
+}
+
 .tableContainer {
   display: flex;
   justify-content: center;
+  background-color: var(--black);
+  padding: 1rem 0;
 }
 
 .table {
   width: 97%;
   max-width: 1000px;
   border-collapse: collapse;
+
+  background-color: var(--black);
+  color: var(--yellow);
+  padding: 0.5rem 0;
 }
 
 .tableHead > th {
   text-align: left;
 }
 
+.subTotalAndCheckout {
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 1rem;
+  background-color: var(--black);
+  border-radius: 5px;
+  color: var(--yellow);
+}
+
+.subTotal {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.checkOut {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--black);
+  background-color: var(--yellow);
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  transition: transform 1s ease-out 0s;
+  margin-bottom: 1rem;
+}
+
+.checkOut:hover {
+  background-color: var(--red);
+  color: var(--black);
+}
+
+.continueShopping {
+  color: var(--yellow);
+}
+
 /* Cart Item */
+
+.remove {
+  display: inline-block;
+  /* font-weight: bold; */
+  text-decoration: none;
+  color: black;
+  background-color: var(--yellow);
+  font-size: 0.9rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 5px;
+  transition: transform 1s ease-out 0s;
+  /* margin-bottom: 1rem; */
+  border: none;
+}
+
+.remove:hover {
+  background-color: var(--red);
+  color: var(--black);
+}
 
 .container {
   margin-right: 1.2rem;
 }
 
 .tableRow {
-  border-bottom: 2px solid black;
+  border-bottom: 5px solid var(--flag-red);
 }
 
 .itemData {
@@ -41,10 +115,19 @@
 
 .itemData > p {
   margin: 0;
-  margin-top: 5px;
+  margin-left: 1rem;
 }
 
 @media (max-width: 525px) {
+  .itemData > p {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .table {
+    width: 100%;
+  }
+
   .tableBody {
     display: flex;
     flex-direction: column;
@@ -97,5 +180,9 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+  }
+
+  .container.containerPrice {
+    margin-right: 0;
   }
 }

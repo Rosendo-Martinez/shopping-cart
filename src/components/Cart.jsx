@@ -5,8 +5,8 @@ import classes from "../styles/cart.module.css";
 
 function Cart({ cart, updateItemQuantity, removeItemFromCart }) {
   return (
-    <div>
-      <h2>Shopping Cart</h2>
+    <div className={classes.cart}>
+      <h2 className={classes.cartTitle}>Shopping Cart</h2>
 
       <form>
         <div className={classes.tableContainer}>
@@ -17,7 +17,7 @@ function Cart({ cart, updateItemQuantity, removeItemFromCart }) {
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
-                <th>?</th>
+                <th></th>
               </tr>
               {Object.entries(cart).map(([id, item]) => {
                 return (
@@ -39,11 +39,19 @@ function Cart({ cart, updateItemQuantity, removeItemFromCart }) {
           </table>
         </div>
 
-        <div>
-          <h3>Total: $1 million</h3>
-          <p>Taxes and shipping calculated at checkout.</p>
-          <button>Checkout</button>
-          <Link to={SHOP_LINK}>Continue Shopping</Link>
+        <div className={classes.flex}>
+          <div className={classes.subTotalAndCheckout}>
+            <h3 className={classes.subTotal}>Total: $1 million</h3>
+            <p>Taxes and shipping calculated at checkout.</p>
+            <div>
+              <Link className={classes.checkOut}>Checkout</Link>
+            </div>
+            <div>
+              <Link className={classes.continueShopping} to={SHOP_LINK}>
+                Continue Shopping
+              </Link>
+            </div>
+          </div>
         </div>
       </form>
     </div>
@@ -69,7 +77,7 @@ function CartItem({
         </div>
       </td>
       <td className={classes.price}>
-        <div className={classes.container}>
+        <div className={classes.container + " " + classes.containerPrice}>
           <p>${price}</p>
         </div>
       </td>
@@ -89,7 +97,11 @@ function CartItem({
       </td>
       <td className={classes.removeItem}>
         <div className={classes.container}>
-          <button type="button" onClick={() => removeItemFromCart(id)}>
+          <button
+            className={classes.remove}
+            type="button"
+            onClick={() => removeItemFromCart(id)}
+          >
             Remove
           </button>
         </div>
