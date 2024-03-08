@@ -1,0 +1,37 @@
+@import "./globalVariables.css";
+
+.container {
+  display: flex;
+}
+
+.buttonLeft,
+.buttonRight,
+.input {
+  display: inline-block;
+}
+
+.input {
+  width: 3rem;
+  height: 1rem;
+  background-color: var(--yellow);
+  border: none;
+}
+
+.buttonLeft,
+.buttonRight {
+  background-color: var(--yellow);
+  border: none;
+}
+
+.buttonLeft {
+  border-right: 2px solid black;
+}
+
+.buttonRight {
+  border-left: 2px solid black;
+}
+
+.buttonLeft:hover,
+.buttonRight:hover {
+  background-color: var(--red);
+}

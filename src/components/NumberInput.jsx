@@ -1,7 +1,10 @@
+import classes from "../styles/numberInput.module.css";
+
 function NumberInput({ number, onChange, min = 1, max }) {
   return (
-    <div>
+    <div className={classes.container}>
       <button
+        className={classes.buttonLeft}
         type="button"
         onClick={() => {
           if (number + 1 <= max) onChange(number + 1);
@@ -10,6 +13,7 @@ function NumberInput({ number, onChange, min = 1, max }) {
         +
       </button>
       <input
+        className={classes.input}
         type="number"
         value={number}
         onChange={(event) => {
@@ -20,6 +24,7 @@ function NumberInput({ number, onChange, min = 1, max }) {
         max={max}
       />
       <button
+        className={classes.buttonRight}
         type="button"
         onClick={() => {
           if (number - 1 >= min) onChange(number - 1);
