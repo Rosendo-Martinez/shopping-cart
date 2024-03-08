@@ -3,9 +3,9 @@ import star from "../assets/star.png";
 import cart from "../assets/cart.png";
 import classes from "../styles/header.module.css";
 import PropTypes from "prop-types";
-import { SHOP_LINK, HOME_LINK } from "../constants";
+import { SHOP_LINK, HOME_LINK, CART_LINK } from "../constants";
 
-function Header({ totalItemsInCart, handleCartClick }) {
+function Header({ totalItemsInCart }) {
   const MAX_ITEMS = 99;
 
   return (
@@ -26,9 +26,9 @@ function Header({ totalItemsInCart, handleCartClick }) {
 
       <div className={classes.right}>
         <div className={classes.cartAndBadgeContainer}>
-          <button onClick={handleCartClick} className={classes.cartButton}>
+          <Link to={CART_LINK} className={classes.cartButton}>
             <img className={classes.cart} src={cart} />
-          </button>
+          </Link>
           {totalItemsInCart > 0 ? (
             <div className={classes.badge}>
               <p className={classes.badgeText}>
