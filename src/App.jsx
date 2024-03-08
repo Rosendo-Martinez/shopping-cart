@@ -35,6 +35,13 @@ function App() {
     );
   }
 
+  function getSubTotal() {
+    return Object.entries(cart).reduce(
+      (subTotal, [id, item]) => subTotal + item.quantity * item.price,
+      0,
+    );
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -66,6 +73,7 @@ function App() {
                   cart={cart}
                   updateItemQuantity={updateItemQuantity}
                   removeItemFromCart={removeItemFromCart}
+                  getSubTotal={getSubTotal}
                 />
               ),
             },

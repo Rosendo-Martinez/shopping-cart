@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import NumberInput from "./NumberInput";
 import classes from "../styles/cart.module.css";
 
-function Cart({ cart, updateItemQuantity, removeItemFromCart }) {
+function Cart({ cart, updateItemQuantity, removeItemFromCart, getSubTotal }) {
   return (
     <div className={classes.cart}>
       <h2 className={classes.cartTitle}>Shopping Cart</h2>
@@ -41,7 +41,7 @@ function Cart({ cart, updateItemQuantity, removeItemFromCart }) {
 
         <div className={classes.flex}>
           <div className={classes.subTotalAndCheckout}>
-            <h3 className={classes.subTotal}>Total: $1 million</h3>
+            <h3 className={classes.subTotal}>Total: ${getSubTotal()}</h3>
             <p>Taxes and shipping calculated at checkout.</p>
             <div>
               <Link className={classes.checkOut}>Checkout</Link>
