@@ -11,7 +11,7 @@ function CatalogItem({ image, title, price, itemStorePage }) {
         </div>
         <div>
           <p className={classes.title}>{title}</p>
-          <p className={classes.cost}>{price}</p>
+          <p className={classes.cost}>${price}</p>
         </div>
       </Link>
     </div>
