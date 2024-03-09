@@ -49,12 +49,15 @@ function ShopCatalog() {
 
 export async function loadShopItems({ params, request }) {
   const url = new URL(request.url);
-  const sortBy = url.searchParams.get(SORT_BY_PARAM_KEY);
+  const sortBy =
+    url.searchParams.get(SORT_BY_PARAM_KEY) ||
+    SORT_BY_VALUES[DEFAULT_SORT_BY_VALUE];
+  const pageNumber = params.pageNumber === undefined ? 1 : params.pageNumber;
 
   // params.pageNumber may be undefined (due to /shop being same as /shop/page/1)
   // sortby may be null (due to /shop being same as /shop?sortBy=<DEFAULT>)
   // Should deal with this eventually
-  return fetchShopData(params.pageNumber, sortBy);
+  return fetchShopData(pageNumber, sortBy);
 }
 
 /**

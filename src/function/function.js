@@ -2,6 +2,7 @@ import {
   SHOP_ITEMS_DEV_ONLY,
   NUMBER_OF_PAGES_IN_CATALOG_DEV_ONLY,
   CART_DEV_ONLY,
+  SORT_BY_VALUES,
 } from "../constants";
 import { SHOP_ITEMS } from "../shopItems";
 
@@ -13,10 +14,50 @@ import { SHOP_ITEMS } from "../shopItems";
  * @returns
  */
 export async function fetchShopData(page, sortBy) {
-  // no API for now, maybe in future
+  const itemsPerPage = 6;
+  const numberOfPages = Math.ceil(SHOP_ITEMS.length / itemsPerPage);
+
+  const temp = [...SHOP_ITEMS];
+  switch (sortBy) {
+    case "Price: low to high":
+      temp.sort((a, b) => a.price - b.price);
+      break;
+    case "Price: high to low":
+      temp.sort((a, b) => b.price - a.price);
+      break;
+    case "Alphabetically: A-Z":
+      temp.sort(function (a, b) {
+        if (a.title.toLocaleLowerCase() < b.title.toLocaleLowerCase()) {
+          return -1;
+        }
+        if (a.title.toLocaleLowerCase() > b.title.toLocaleLowerCase()) {
+          return 1;
+        }
+        return 0;
+      });
+      break;
+    case "Alphabetically: Z-A":
+      temp.sort(function (a, b) {
+        if (a.title.toLocaleLowerCase() < b.title.toLocaleLowerCase()) {
+          return 1;
+        }
+        if (a.title.toLocaleLowerCase() > b.title.toLocaleLowerCase()) {
+          return -1;
+        }
+        return 0;
+      });
+      break;
+  }
+
+  const start = (page - 1) * itemsPerPage;
+  const end =
+    start + itemsPerPage > SHOP_ITEMS.length
+      ? SHOP_ITEMS.length
+      : start + itemsPerPage;
+
   return {
-    numberOfPages: NUMBER_OF_PAGES_IN_CATALOG_DEV_ONLY,
-    items: SHOP_ITEMS_DEV_ONLY,
+    numberOfPages: numberOfPages,
+    items: temp.slice(start, end),
   };
 }
 
