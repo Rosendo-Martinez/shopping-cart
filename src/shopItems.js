@@ -167,7 +167,7 @@ export const SHOP_ITEMS = [
     description:
       "Success no matter the cost. Well, it's not like Stalin is paying the bill anyways.",
     image: placeHolderImage,
-    price: 17,
+    price: 115,
     sold: 13,
     stock: 14,
   },
