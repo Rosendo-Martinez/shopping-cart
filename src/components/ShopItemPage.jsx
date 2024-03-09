@@ -17,7 +17,16 @@ function ShopItemPage({ addItemToCart, cart }) {
           <div>
             <h2 className={classes.title}>{item.title}</h2>
             <p className={classes.cost}>${item.price}</p>
-            <p className={classes.description}>{item.description}</p>
+            <p className={classes.description}>
+              <b>Description:</b> {item.description}
+            </p>
+            <p>
+              <b>Quote:</b> {item.quote}
+            </p>
+            {item.sold > 10 ? <p>Over {item.sold} sold so far.</p> : null}
+            {item.stock < 15 ? (
+              <p>Only {item.stock} in stock! Buy one before they run out.</p>
+            ) : null}
           </div>
           <div>
             {item.id in cart ? (

@@ -69,7 +69,7 @@ export async function fetchShopData(page, sortBy) {
  */
 export async function fetchItemData(id) {
   // TODO: error checking for invalid id
-  return SHOP_ITEMS_DEV_ONLY[0];
+  return SHOP_ITEMS.find((item) => item.id === id);
 }
 
 /**
