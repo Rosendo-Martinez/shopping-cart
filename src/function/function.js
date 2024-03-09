@@ -99,6 +99,5 @@ export async function fetchCart(credentials) {
 export async function fetchBestSellingPosters() {
   const temp = [...SHOP_ITEMS];
   temp.sort((a, b) => b.sold - a.sold);
-  console.log(temp);
   return temp.slice(0, 5);
 }
