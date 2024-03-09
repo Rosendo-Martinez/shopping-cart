@@ -13,25 +13,33 @@ function BestSellingPosters({ bestSelling }) {
           <Poster
             key={p.id}
             title={p.title}
-            bestSellingRank={i + 1}
             price={p.price}
             itemStorePage={`${ITEM_LINK_PREFIX}/${p.id}`}
             image={p.image}
+            quote={p.quote}
+            sold={p.sold}
           />
         ))}
     </div>
   );
 }
 
-function Poster({ title, bestSellingRank, price, itemStorePage, image }) {
+function Poster({ title, price, itemStorePage, image, quote, sold }) {
   return (
     <div className={classes.posterContainer}>
       <div className={classes.poster}>
         <div className={classes.posterDetails}>
           <div>
             <h3>{title}</h3>
-            <p>#{bestSellingRank} best selling</p>
-            <p>Cost: ${price}</p>
+            <p className={classes.quote}>
+              <b>Quote:</b> {quote}
+            </p>
+            <p>
+              <b>Sold:</b> {sold}
+            </p>
+            <p>
+              <b>Cost:</b> ${price}
+            </p>
           </div>
           <div>
             <Link className={classes.posterLink} to={itemStorePage}>
@@ -49,7 +57,6 @@ function Poster({ title, bestSellingRank, price, itemStorePage, image }) {
 
 Poster.propTypes = {
   title: PropTypes.string,
-  bestSellingRank: PropTypes.number,
   price: PropTypes.number,
   itemStorePage: PropTypes.string,
   image: PropTypes.string,
