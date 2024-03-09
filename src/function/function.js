@@ -3,6 +3,7 @@ import {
   NUMBER_OF_PAGES_IN_CATALOG_DEV_ONLY,
   CART_DEV_ONLY,
 } from "../constants";
+import { SHOP_ITEMS } from "../shopItems";
 
 /**
  * Fetches the item data for the given page with given sort by option, and the number of catalog pages.
@@ -52,4 +53,11 @@ export async function addToCart(id) {
  */
 export async function fetchCart(credentials) {
   return CART_DEV_ONLY;
+}
+
+export async function fetchBestSellingPosters() {
+  const temp = [...SHOP_ITEMS];
+  temp.sort((a, b) => b.sold - a.sold);
+  console.log(temp);
+  return temp.slice(0, 5);
 }

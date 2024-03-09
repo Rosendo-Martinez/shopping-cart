@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import Layout from "./pages/Layout.jsx";
 import Shop from "./pages/Shop.jsx";
-import Home from "./pages/Home.jsx";
+import Home, { loadBestSellingPosters } from "./pages/Home.jsx";
 import ShopCatalog, { loadShopItems } from "./components/ShopCatalog.jsx";
 import ShopItemPage, { loadShopItem } from "./components/ShopItemPage.jsx";
 import Cart from "./components/Cart.jsx";
@@ -48,7 +48,7 @@ function App() {
       element: <Layout totalItemsInCart={getTotalItemsInCart()} />,
       errorElement: <ErrorPage />,
       children: [
-        { index: true, element: <Home /> },
+        { index: true, element: <Home />, loader: loadBestSellingPosters },
         {
           path: "shop",
           element: <Shop />,
