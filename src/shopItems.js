@@ -1,4 +1,18 @@
-import placeHolderImage from "./assets/placeholder.png";
+import InnocentMen from "./assets/storeImages/999InnocentMen.png";
+import CrueltyAndSentimentality from "./assets/storeImages/CrueltyAndSentimentality.png";
+import DontStop from "./assets/storeImages/DontStop.png";
+import Emperor from "./assets/storeImages/Emperor.png";
+import GoAndDie from "./assets/storeImages/GoAndDie.png";
+import Ideology from "./assets/storeImages/Ideology.png";
+import LifeOver from "./assets/storeImages/LifeOver.png";
+import LiveAndSuffer from "./assets/storeImages/LiveAndSuffer.png";
+import Macbeth from "./assets/storeImages/Macbeth.png";
+import MeWhatFor from "./assets/storeImages/MeWhatFor.png";
+import NotAlone from "./assets/storeImages/NotAlone.png";
+import PridePig from "./assets/storeImages/PridePig.png";
+import Shhpy from "./assets/storeImages/Shhpy.png";
+import SOB from "./assets/storeImages/SOB.png";
+import TruthSnout from "./assets/storeImages/TruthSnout.png";
 
 export const SHOP_ITEMS = [
   {
@@ -7,7 +21,7 @@ export const SHOP_ITEMS = [
     quote: "I want to live to think and suffer!",
     description:
       "Life is about suffering and thinking. Solzhenitsyn did just that during his time in the Gulag.",
-    image: placeHolderImage,
+    image: LiveAndSuffer,
     price: 99,
     sold: 34,
     stock: 27,
@@ -19,7 +33,7 @@ export const SHOP_ITEMS = [
       "Ideology-that is what gives evildoing its long-sought justification and gives the evildoer the necessary steadfastness and determination",
     description:
       "Evil needs a justification, else it can't not be evil much longer.",
-    image: placeHolderImage,
+    image: Ideology,
     price: 125,
     sold: 9,
     stock: 14,
@@ -31,7 +45,7 @@ export const SHOP_ITEMS = [
       "Macbeth's self-justifications were feeble-and his conscience devoured him.",
     description:
       "Macbeth was not sure enough of his thoughts and ideas, and because so he could not handle his evil.",
-    image: placeHolderImage,
+    image: Macbeth,
     price: 99,
     sold: 14,
     stock: 17,
@@ -41,7 +55,7 @@ export const SHOP_ITEMS = [
     title: "Me?",
     quote: "Me? What for?",
     description: "You are under arrest! What have you to say to that?",
-    image: placeHolderImage,
+    image: MeWhatFor,
     price: 120,
     sold: 18,
     stock: 7,
@@ -51,7 +65,7 @@ export const SHOP_ITEMS = [
     title: "Shhpy",
     quote: "A shhpy.",
     description: "A fellow prisoner confesses he's a spy!",
-    image: placeHolderImage,
+    image: Shhpy,
     price: 120,
     sold: 6,
     stock: 23,
@@ -62,7 +76,7 @@ export const SHOP_ITEMS = [
     quote: "Don't ever be the first to stop applauding!",
     description:
       "The first to stop applauding gets a one way ticket to the Gulag! Who will it be?",
-    image: placeHolderImage,
+    image: DontStop,
     price: 75,
     sold: 12,
     stock: 16,
@@ -74,7 +88,7 @@ export const SHOP_ITEMS = [
       "'And who are you?' The newcomer smiled with embarrassment: 'The Emperor Mikhail.'",
     description:
       "Some old man convinced some guy that he would become the Emperor of Russia in 1953, which most likely got the guy killed.",
-    image: placeHolderImage,
+    image: Emperor,
     price: 100,
     sold: 4,
     stock: 8,
@@ -86,7 +100,7 @@ export const SHOP_ITEMS = [
       "Cruelty is invariably accompanied by sentimentality. Its the law of complementaries.",
     description:
       "Cruelty and sentimentality come together, but not at the same time.",
-    image: placeHolderImage,
+    image: CrueltyAndSentimentality,
     price: 75,
     sold: 4,
     stock: 9,
@@ -98,7 +112,7 @@ export const SHOP_ITEMS = [
       "Even the most broad-minded of us can embrace only that part of the truth into which our own snout has blundered.",
     description:
       "Its hard even for the smartest to expect the whole truth and not just part.",
-    image: placeHolderImage,
+    image: TruthSnout,
     price: 100,
     sold: 8,
     stock: 6,
@@ -108,7 +122,7 @@ export const SHOP_ITEMS = [
     title: "Go Die",
     quote: "Go and die; we will go on living.",
     description: "What the SU expected of its soldiers.",
-    image: placeHolderImage,
+    image: GoAndDie,
     price: 125,
     sold: 8,
     stock: 12,
@@ -120,7 +134,7 @@ export const SHOP_ITEMS = [
       "You are not alone in the world! Wise, spiritual beings-human beings-still exist.",
     description:
       "Solzhenitsyn describing how he felt the first time he meet his fellow prisoners.",
-    image: placeHolderImage,
+    image: NotAlone,
     price: 75,
     sold: 15,
     stock: 8,
@@ -130,7 +144,7 @@ export const SHOP_ITEMS = [
     title: "Pride, Lard, and Pig",
     quote: "Pride grows in the human heart like lard on a pig.",
     description: "Pride grows in humans like fat on a pig.",
-    image: placeHolderImage,
+    image: PridePig,
     price: 120,
     sold: 8,
     stock: 12,
@@ -142,7 +156,7 @@ export const SHOP_ITEMS = [
       "My life is over, a little early to be sure, but there's nothing to be done about it.",
     description:
       "Your life is over, give up! This is how you beat the dratted interrogator, and how you survive the Gulag.",
-    image: placeHolderImage,
+    image: LifeOver,
     price: 125,
     sold: 15,
     stock: 19,
@@ -154,7 +168,7 @@ export const SHOP_ITEMS = [
       "'He didn't really feel like eating, but nevertheless he ate a helping of veal and drank some beer.' The son-of-a-bitch!",
     description:
       "When your starving and aren't going to get any food any time soon, don't read books that talk about food!",
-    image: placeHolderImage,
+    image: SOB,
     price: 100,
     sold: 23,
     stock: 20,
@@ -166,7 +180,7 @@ export const SHOP_ITEMS = [
       "Stalin would rather that 999 innocent men should rot than miss one genuine spy.",
     description:
       "Success no matter the cost. Well, it's not like Stalin is paying the bill anyways.",
-    image: placeHolderImage,
+    image: InnocentMen,
     price: 115,
     sold: 13,
     stock: 14,
