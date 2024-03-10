@@ -62,10 +62,25 @@
 .posterImageContainer {
   display: flex;
   justify-content: center;
+  width: 30%;
+  min-width: 190px;
+  align-self: center;
+}
+
+.posterImageContainer > img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  border: 4px solid var(--black);
+  object-fit: cover;
 }
 
 @media (max-width: 500px) {
   .poster {
     flex-direction: column-reverse;
+  }
+
+  .posterImageContainer {
+    width: 100%;
+    min-width: unset;
   }
 }
