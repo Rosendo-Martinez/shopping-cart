@@ -1,9 +1,4 @@
-import {
-  SHOP_ITEMS_DEV_ONLY,
-  NUMBER_OF_PAGES_IN_CATALOG_DEV_ONLY,
-  CART_DEV_ONLY,
-  SORT_BY_VALUES,
-} from "../constants";
+import { CART_DEV_ONLY } from "../constants";
 import { SHOP_ITEMS } from "../shopItems";
 
 /**
