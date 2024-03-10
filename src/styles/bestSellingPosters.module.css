@@ -16,7 +16,10 @@
 /* Posters */
 
 .quote {
-  max-width: 450px;
+  background-color: var(--black);
+  color: var(--yellow);
+  padding: 1rem;
+  border-radius: 15px;
 }
 
 .poster {
@@ -35,6 +38,10 @@
 }
 
 .posterDetails {
+  max-width: 450px;
+  min-width: 200px;
+  width: 40%;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,13 +57,13 @@
   padding: 0.5rem 1.2rem;
   border-radius: 5px;
 
-  background-color: var(--black);
-  color: var(--yellow);
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 .posterLink:hover {
-  color: var(--black);
-  background-color: var(--yellow);
+  color: var(--yellow);
+  background-color: var(--black);
 }
 
 .posterImageContainer {
@@ -82,5 +89,10 @@
   .posterImageContainer {
     width: 100%;
     min-width: unset;
+  }
+
+  .posterDetails {
+    max-width: unset;
+    width: unset;
   }
 }
