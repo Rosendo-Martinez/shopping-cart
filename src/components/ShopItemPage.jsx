@@ -20,7 +20,7 @@ function ShopItemPage({ addItemToCart, cart }) {
             <p className={classes.description}>
               <b>Description:</b> {item.description}
             </p>
-            <p>
+            <p className={classes.quote}>
               <b>Quote:</b> {item.quote}
             </p>
             {item.sold > 10 ? <p>Over {item.sold} sold so far.</p> : null}
