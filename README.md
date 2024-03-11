@@ -12,6 +12,16 @@ What is this project? It is a fake SPA eCommerce website (front-end only). The f
 - JavaScript
 - HTML/CSS
 
+# Screenshots
+
+![Screenshot](readme-images/sc1.png)
+
+![Screenshot](readme-images/sc2.png)
+
+![Screenshot](readme-images/sc3.png)
+
+![Screenshot](readme-images/sc4.png)
+
 # Commands
 To start up the local development server: `npm run dev`
 
