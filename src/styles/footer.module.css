@@ -1,5 +1,9 @@
 @import "./globalVariables.css";
 
+.footer {
+  margin-top: auto;
+}
+
 .top,
 .bottom,
 .nameAndLogo {
